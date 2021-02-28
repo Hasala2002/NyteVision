@@ -1,0 +1,278 @@
+@import url("https://fonts.googleapis.com/css2?family=Fira+Code&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+:root {
+  --primary-color: #070a1b;
+  --secondary-color: #040614;
+  --font-main: #fff;
+  --font-sub: #68f3a8;
+  --font-invert: #070a1b;
+  --font-notify: #a7a7a7;
+}
+
+[data-theme=dark] {
+  --primary-color: #eee;
+  --secondary-color: #f0fff0;
+  --font-main: #070a1b;
+  --font-sub: #00b074;
+  --font-invert: #070a1b;
+  --font-notify: #292727;
+}
+
+a {
+  text-decoration: none;
+}
+
+@keyframes floating {
+  0% {
+    transform: translate(0, 0px);
+  }
+  50% {
+    transform: translate(0, 15px);
+  }
+  100% {
+    transform: translate(0, 0px);
+  }
+}
+line {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: dash 50s linear alternate infinite;
+  /* animation-fill-mode: forwards; */
+}
+
+@keyframes dash {
+  from {
+    stroke-dashoffset: 10000;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+* {
+  box-sizing: border-box;
+}
+
+.material-icons {
+  font-family: "Material Icons";
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+  /* Support for IE. */
+  font-feature-settings: "liga";
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+  background: var(--primary-color);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--font-sub);
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  background-color: var(--primary-color);
+  padding: 0;
+  margin: 0;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+html .wrapper, body .wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  align-items: center;
+}
+html .wrapper .navbar, body .wrapper .navbar {
+  width: 100%;
+  height: 15%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+html .wrapper .navbar .navbarTitle, body .wrapper .navbar .navbarTitle {
+  color: var(--font-sub);
+  font-size: 1.8em;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+}
+html .wrapper .navbar .navbarTitle .titleHalf, body .wrapper .navbar .navbarTitle .titleHalf {
+  color: var(--font-main);
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+}
+html .wrapper .navbar .navitems, body .wrapper .navbar .navitems {
+  width: 40%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+html .wrapper .navbar .navitems .navitem, body .wrapper .navbar .navitems .navitem {
+  font-size: 1em;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  color: var(--font-main);
+}
+html .wrapper .navbar .navitems .navitem:hover, body .wrapper .navbar .navitems .navitem:hover {
+  border-bottom: 3px solid var(--font-main);
+}
+html .wrapper .navbar .navitems .switch, body .wrapper .navbar .navitems .switch {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+html .wrapper .navbar .navitems .switch:hover, body .wrapper .navbar .navitems .switch:hover {
+  border: none;
+  color: var(--font-sub);
+  cursor: pointer;
+}
+html .wrapper .navbar .navitems .switch .material-icons, body .wrapper .navbar .navitems .switch .material-icons {
+  font-size: 1.5em;
+}
+html .wrapper .navbar .signUp, body .wrapper .navbar .signUp {
+  width: 20%;
+}
+html .wrapper .navbar .signUp .getSt, body .wrapper .navbar .signUp .getSt {
+  background-color: var(--font-sub);
+  color: var(--font-invert);
+  padding: 10px 15px;
+  border-radius: 50px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  transition: 0.5s;
+  cursor: pointer;
+}
+html .wrapper .navbar .signUp .getSt:hover, body .wrapper .navbar .signUp .getSt:hover {
+  background-color: unset;
+  box-shadow: inset 0 0 0 3px var(--font-sub);
+  color: var(--font-sub);
+  border-bottom: none;
+}
+html .wrapper .scrolled, body .wrapper .scrolled {
+  background-color: var(--secondary-color);
+}
+html .wrapper .webpage, body .wrapper .webpage {
+  position: relative;
+  width: 100%;
+  height: 85%;
+}
+html .wrapper .webpage .wrapper-sm, body .wrapper .webpage .wrapper-sm {
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+}
+html .wrapper .webpage .wrapper-sm .page, body .wrapper .webpage .wrapper-sm .page {
+  width: 100%;
+  height: 100%;
+}
+html .wrapper .webpage .wrapper-sm .hero, body .wrapper .webpage .wrapper-sm .hero {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: unset;
+  align-items: unset;
+}
+html .wrapper .webpage .wrapper-sm .hero .svgarea, body .wrapper .webpage .wrapper-sm .hero .svgarea {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  opacity: 0.75;
+}
+html .wrapper .webpage .wrapper-sm .hero .pagehalf, body .wrapper .webpage .wrapper-sm .hero .pagehalf {
+  z-index: 2;
+  width: 50%;
+  height: 100%;
+  padding-left: 5%;
+  padding-right: 5%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: unset;
+  padding-top: 7.5%;
+  padding-bottom: 7.5%;
+}
+html .wrapper .webpage .wrapper-sm .hero .pagehalf .mainTitle, body .wrapper .webpage .wrapper-sm .hero .pagehalf .mainTitle {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: 2.75em;
+  color: var(--font-main);
+}
+html .wrapper .webpage .wrapper-sm .hero .pagehalf .mainTitle .green, body .wrapper .webpage .wrapper-sm .hero .pagehalf .mainTitle .green {
+  color: var(--font-sub);
+}
+html .wrapper .webpage .wrapper-sm .hero .pagehalf .subTitle, body .wrapper .webpage .wrapper-sm .hero .pagehalf .subTitle {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-size: 1.2em;
+  color: var(--font-main);
+}
+html .wrapper .webpage .wrapper-sm .hero .pagehalf .subTitle .green, body .wrapper .webpage .wrapper-sm .hero .pagehalf .subTitle .green {
+  color: var(--font-sub);
+}
+html .wrapper .webpage .wrapper-sm .hero .pagehalf .learnMo, body .wrapper .webpage .wrapper-sm .hero .pagehalf .learnMo {
+  width: fit-content;
+  background-color: var(--font-sub);
+  color: var(--font-invert);
+  font-size: 1em;
+  padding: 10px 30px;
+  border-radius: 50px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  transition: 0.5s;
+  cursor: pointer;
+}
+html .wrapper .webpage .wrapper-sm .hero .pagehalf .learnMo:hover, body .wrapper .webpage .wrapper-sm .hero .pagehalf .learnMo:hover {
+  background-color: unset;
+  box-shadow: inset 0 0 0 3px var(--font-sub);
+  color: var(--font-sub);
+}
+html .wrapper .webpage .wrapper-sm .hero .pagehalf .notification, body .wrapper .webpage .wrapper-sm .hero .pagehalf .notification {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-size: 1em;
+  color: var(--font-notify);
+  display: flex;
+  flex-direction: row;
+  justify-content: unset;
+  align-items: center;
+}
+html .wrapper .webpage .wrapper-sm .hero .pagehalf .notification .info, body .wrapper .webpage .wrapper-sm .hero .pagehalf .notification .info {
+  color: var(--font-notify);
+  font-size: 1.2em;
+  margin-right: 5px;
+}
+html .wrapper .webpage .wrapper-sm .hero .imagehalf, body .wrapper .webpage .wrapper-sm .hero .imagehalf {
+  padding: 0;
+}
+html .wrapper .webpage .wrapper-sm .hero .imagehalf .laptopPng, body .wrapper .webpage .wrapper-sm .hero .imagehalf .laptopPng {
+  width: 100%;
+  height: auto;
+  animation: floating 3s infinite ease-in-out;
+}
+
+/*# sourceMappingURL=/app.c328ef1a.css.map */
